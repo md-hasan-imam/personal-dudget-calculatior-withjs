@@ -22,9 +22,9 @@
     <!-- ====== header starts =======  -->
 
     <header class="my-5">
-        <div class="text-center mx-auto ">
+        <div class="text-center mx-auto">
             <h1 class="d-inline site-title">Personal Budget </h1>
-            <img class="img-fluid " src="photoes/money-bag-icon.png" alt="money-bag-icon" width="40px">
+            <img class="img-fluid align-text-bottom" src="photoes/money-bag-icon.png" alt="money-bag-icon" width="37px">
         </div>
     </header>
 
@@ -36,35 +36,36 @@
             <div class="container ">
                 <div class="row text-center">
                     <!-- banner image -->
-                    <div class="col-lg-7 col-12">
-                        <img src="photoes/Budget.jpg" alt="Budget" class="img-fluid pe-2 rounded">
+                    <div class="col-lg-7 col-md-12 col-sm-12 col-12">
+                        <img src="photoes/Budget.jpg" alt="Budget" class="img-fluid rounded">
                     </div>
                     <!-- form -->
-                    <div class="col-lg-5 col-12 budget-calculator rounded">
+                    <div class="col-lg-5 col-md-12 col-sm-12 col-12 budget-calculator rounded">
                         <h6 class="title">Income</h6>
-                        <p class="d-inline">Income: </p><input id="income" class="input-field " type="text">
+                        <p class="d-inline">Income: </p><input id="income" class="input-field " type="text" placeholder="">
+                        <p id="error-message"></p>
 
                         <div class="">
                             <h6 class="title">Expenses</h6>
-                            <p class="d-inline">Food: </p><input id="food" class="input-field " type="text">
+                            <p class="d-inline">Food: </p><input id="foods-cost" class="input-field " type="text" placeholder="">
                             <br>
-                            <p class="d-inline">Rent: </p><input id="rent" class="input-field " type="text">
+                            <p class="d-inline">Rent: </p><input id="rent-cost" class="input-field " type="text">
                             <br>
-                            <p class="d-inline">Cloths: </p><input id="cloths" class="input-field " type="text">
+                            <p class="d-inline">Cloths: </p><input id="cloths-cost" class="input-field " type="text">
                             <br>
                         </div>
-                        <button id="calculate-button" class="btn btn-primary mt-2">Calculate</button>
+                        <button id="calculate-button" class="btn btn-primary mt-2 px-5">Calculate</button>
 
-                        <h6 class="title">Total Expenses: <span id="total-expenses">5500</span></h6>
-                        <h6 class="title mt-2 mb-3">Balance: <span id="total-expenses">4500</span></h6>
+                        <h6 class="title">Total Expenses: <span id="total-expenses">00</span></h6>
+                        <h6 class="title mt-2 mb-3">Balance: <span id="balance">00</span></h6>
 
                         <!-- saving part -->
-                        <p class="d-inline d-inline">Save: <input id="saving-percentage" class="input-field "
+                        <p class="d-inline d-inline">Save: <input id="savings-percentage" class="input-field "
                                 type="text" style="width:60px">&nbsp;&nbsp; %</p>
-                        <button id="save" class="btn btn-primary ms-3 px-4">Save</button>
+                        <button id="save" class="btn btn-primary ms-3 px-3">Save</button>
 
-                        <h6 class="title">Saving Amount: <span id="total-expenses">5500</span></h6>
-                        <h6 class="title">Remaining Balance: <span id="total-expenses">4500</span></h6>
+                        <h6 class="title">Saving Amount: <span id="saving-amount">00</span></h6>
+                        <h6 class="title">Remaining Balance: <span id="remaining-balance">00</span></h6>
                     </div>
                 </div>
             </div>
