@@ -2,9 +2,21 @@ const inputErrorMsg1 ='please input numbers only';
 const inputErrorMsg2 ='Input positive number only';
 
 function getInputInNmuber(inputId){
-    const Input = document.getElementById(inputId);
-    const inputInText = Input.value;
+    const input = document.getElementById(inputId);
+    const inputInText = input.value;
     const inputAmount = parseFloat(inputInText); 
+
+    // mandatory error message 1 
+    // if(typeof input.value != 'number'){
+    //     alert("Please input number");
+    //     return;
+    // }
+    // // else if(inputAmount <0){
+    // //     alert("cannot input negative number");
+    // //     return;
+    // // }
+    // else{
+    // }
     return inputAmount;
 }
 
@@ -51,19 +63,24 @@ document.getElementById('calculate-button').addEventListener('click',function(){
 
 document.getElementById('save').addEventListener('click',function(){
     // savings fuctionality starts 
-    const finalBalanceField = document.getElementById('balance');
-    const finalBalance = finalBalanceField.innerText ;
+
+    const totalIncomeAmount = getInputInNmuber('income');
+
+    const balanceField = document.getElementById('balance');
+    const totalBalanceAmount = balanceField.innerText;
+
 
     // getting amount of savings using percentage 
     const savingPercentage = getInputInNmuber('savings-percentage');
-    const savingsAmount =  (finalBalance*savingPercentage) / 100;
+    const savingsAmount =  (totalIncomeAmount*savingPercentage) / 100;
     
     const savingFieldAmount = document.getElementById('saving-amount');
     savingFieldAmount.innerText = savingsAmount;
 
     // calculating remaining balance
     const remainingBalanceField =document.getElementById('remaining-balance');
-    const remainingBalanceAmount = finalBalance - savingsAmount;
+
+    const remainingBalanceAmount = totalBalanceAmount - savingsAmount;
     remainingBalanceField.innerText = remainingBalanceAmount;
 });
 
