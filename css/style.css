@@ -1,0 +1,46 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+p{
+    font-size: 15px;
+}
+
+/* title css */
+
+.site-title{
+    font-size: 50px;
+    color: #3d88f8;
+    font-weight: 700;
+}
+
+.title{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+/* input field css */
+.input-field{
+    background: #DCDCDC;
+    height: 25px;   
+    margin-bottom: 10px;
+    border: none;
+    padding-left: 7px;
+}
+
+/* button css */
+
+.button{
+    background: rgba(42, 87, 235, 0.248);
+}
+
+.btn{
+    padding: 5px 15px;
+}
+.btn:focus, .btn:active{
+   outline: none;
+}
+
+.budget-calculator{
+    background: #F8F8F8;
+}
