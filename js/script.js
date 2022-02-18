@@ -1,3 +1,5 @@
+const errorField = document.getElementById('error-message');
+
 function getInputInNmuber(inputId) {
     const input = document.getElementById(inputId);
     const inputInText = input.value;
@@ -21,10 +23,12 @@ document.getElementById('calculate-button').addEventListener('click', function (
     const clothsCost = getInputInNmuber('cloths-cost');
 
     if (totalIncomeAmount < 0 || foodsCost < 0 || rentalCost < 0 || clothsCost < 0) {
-        alert("cannot input negative number");
+        errorField.style.visibility = 'visible';
+        errorField.innerText = "***Cannot input negative number***";
         return;
     } else if (isNaN(totalIncomeAmount) || isNaN(foodsCost) || isNaN(rentalCost) || isNaN(clothsCost)) {
-        alert("Only numbers are Allowd");
+        errorField.style.visibility = 'visible';
+        errorField.innerText = "***Text are not allowed***";
         return;
     }
 
@@ -34,7 +38,8 @@ document.getElementById('calculate-button').addEventListener('click', function (
     // dedcting total expenses from total income using function
 
     if (totalIncomeAmount < totalExpenses) {
-        alert("Income can't be less than your Expenses");
+        errorField.style.visibility = 'visible';
+        errorField.innerText = "***Expense is more than your income***";
         return;
     } else {
         const totalBalance = getBalanceAfterDeduction(totalIncomeAmount, totalExpenses)
@@ -48,7 +53,6 @@ document.getElementById('calculate-button').addEventListener('click', function (
 // calculation of second event of savings
 
 document.getElementById('save').addEventListener('click', function () {
-    // savings fuctionality starts 
 
     const totalIncomeAmount = getInputInNmuber('income');
 
@@ -56,23 +60,21 @@ document.getElementById('save').addEventListener('click', function () {
     const savingPercentage = getInputInNmuber('savings-percentage');
     const savingsAmount = (totalIncomeAmount * savingPercentage) / 100;
 
-
     const savingFieldAmount = document.getElementById('saving-amount');
     savingFieldAmount.innerText = savingsAmount;
-
     const balanceField = document.getElementById('balance');
     const totalBalanceAmount = balanceField.innerText;
-
 
     // calculating remaining balance
     const remainingBalanceField = document.getElementById('remaining-balance');
     const remainingBalanceAmount = totalBalanceAmount - savingsAmount;
     
-    
     if (totalBalanceAmount < savingsAmount) {
         const remainingBalanceAmount = totalBalanceAmount - savingsAmount;
         remainingBalanceField.innerText = remainingBalanceAmount;
-        alert("you have not enough balance For Savings");
+
+        errorField.style.visibility = 'visible';
+        errorField.innerText = "***you have not enough balance For Savings***";
         return;
     } 
     else {
